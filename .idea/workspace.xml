@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="07b79330-8087-43fd-8bab-6e3475ea9cf1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1gvSDcLhE9YQyKeScl8OCvfa5lS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/reggie.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.1985294" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Application.Client2">
+    <configuration name="Client1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
+      <module name="TupleSpace-master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
+      <module name="TupleSpace-master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
+      <module name="TupleSpace-master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.AdminMain" />
+      <module name="TupleSpace-master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Client1" />
+      <item itemvalue="Application.Client2" />
+      <item itemvalue="Application.Client3" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07b79330-8087-43fd-8bab-6e3475ea9cf1" name="Default Changelist" comment="" />
+      <created>1598993455217</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598993455217</updated>
+      <workItem from="1598993458030" duration="497000" />
+      <workItem from="1598994205256" duration="554000" />
+      <workItem from="1598994779045" duration="876000" />
+      <workItem from="1598995698698" duration="10526000" />
+      <workItem from="1599006250863" duration="1963000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="179" key="#Project_Structure" timestamp="1598994712229">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1598994712229" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598996318903">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598996318903" />
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1598994370862">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598994370862" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598995743751">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598995743751" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1598994699379">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598994699379" />
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom" timestamp="1599008215091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599008215091" />
+    <state width="1860" height="279" key="GridCell.Tab.0.center" timestamp="1599008215091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599008215091" />
+    <state width="1860" height="279" key="GridCell.Tab.0.left" timestamp="1599008215091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599008215091" />
+    <state width="1860" height="279" key="GridCell.Tab.0.right" timestamp="1599008215091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599008215091" />
+    <state width="1860" height="343" key="GridCell.Tab.1.bottom" timestamp="1599006236182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599006236182" />
+    <state width="1860" height="343" key="GridCell.Tab.1.center" timestamp="1599006236182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="343" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599006236182" />
+    <state width="1860" height="343" key="GridCell.Tab.1.left" timestamp="1599006236182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="343" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599006236182" />
+    <state width="1860" height="343" key="GridCell.Tab.1.right" timestamp="1599006236182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="343" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599006236182" />
+    <state x="662" y="65" key="SettingsEditor" timestamp="1598996439136">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="65" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598996439136" />
+    <state x="871" y="138" width="607" height="804" key="find.popup" timestamp="1599005016598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="871" y="138" width="607" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599005016598" />
+    <state x="666" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1599005312609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="148" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599005312609" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1598994725074">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598994725074" />
+    <state x="616" y="177" width="672" height="676" key="search.everywhere.popup" timestamp="1598996447541">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="177" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598996447541" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TupleSpace_master$Main.ic" NAME="Main Coverage Results" MODIFIED="1598994729737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

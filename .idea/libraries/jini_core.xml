@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jini-core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jini-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jini-ext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jsk-lib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/outrigger.jar!/" />
+      <root url="jar://$PROJECT_DIR$/reggie.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
