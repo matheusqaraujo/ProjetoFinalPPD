@@ -119,8 +119,8 @@ public class JavaSpaceService {
         return messages;
     }
 
-    public Environment findEnvironment(String arg) throws ServiceUnavailable{
-        return (Environment) read(new Environment(arg));
+    public Environment findEnvironment(String arg, Float latitude, Float longitude) throws ServiceUnavailable{
+        return (Environment) read(new Environment(arg, latitude, longitude));
     }
 
     public User searchUser(User user) throws ServiceUnavailable {

@@ -6,6 +6,7 @@ import br.com.ppd.tuplespace.service.JavaSpaceService;
 import br.com.ppd.tuplespace.service.ServiceUnavailable;
 
 import static br.com.ppd.tuplespace.util.Util.println;
+import static java.lang.Float.parseFloat;
 
 public class AddCommand implements ICommand {
 
@@ -36,10 +37,12 @@ public class AddCommand implements ICommand {
     }
 
     private void addEnv() throws InvalidCommand {
-        if (args.length != 3) throw new InvalidCommand("Correct usage: add env <nome da sala>");
+        if (args.length != 5) throw new InvalidCommand("Correct usage: add env <nome da sala> <latitude> <longitude>");
         String envName = args[2];
+        Float envLatitude = parseFloat(args[3]);
+        Float envLongitude = parseFloat(args[4]);
         try {
-            this.service.send(new Environment(envName));
+            this.service.send(new Environment(envName, envLatitude, envLongitude));
             println(String.format("Sala %s adicionada", envName));
         } catch (ServiceUnavailable serviceUnavailable) {
             println("Could not execute command. Error: " + serviceUnavailable.getMessage());
@@ -47,16 +50,18 @@ public class AddCommand implements ICommand {
     }
 
     private void addUser() throws InvalidCommand {
-        if (args.length != 4) throw new InvalidCommand("Correct usage: add user <nome do usuario> <nome da sala>");
+        if (args.length != 6) throw new InvalidCommand("Correct usage: add user <nome do usuario> <nome da sala> <latitude> <longitude>");
         try {
-            Environment env = this.service.findEnvironment(args[3]);
+            Environment env = this.service.findEnvironment(args[3], parseFloat(args[4]), parseFloat(args[5]));
             if (env == null) throw new IllegalArgumentException(String.format("Sala %s não encontrada.", args[3]));
 
             User user = new User();
             user.name = args[2];
+            user.latitude = parseFloat(args[4]);
+            user.longitude = parseFloat(args[5]);
             if (this.service.searchUser(user) == null) {
                 user.environment = env;
-                this.service.send(new User(args[2], env));
+                this.service.send(new User(args[2], env, parseFloat(args[4]), parseFloat(args[5])));
                 println(String.format("Usuário %s adicionado a sala %s!", args[2], args[3]));
             } else {
                 println(String.format("Uusário %s já está em outra sala!", args[2]));

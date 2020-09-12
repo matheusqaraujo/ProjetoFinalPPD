@@ -6,6 +6,7 @@ import br.com.ppd.tuplespace.service.JavaSpaceService;
 import br.com.ppd.tuplespace.service.ServiceUnavailable;
 
 import static br.com.ppd.tuplespace.util.Util.println;
+import static java.lang.Float.parseFloat;
 
 public class MoveCommand implements ICommand {
     private JavaSpaceService service;
@@ -34,11 +35,11 @@ public class MoveCommand implements ICommand {
     }
 
     private void moveUser() throws InvalidCommand {
-        if (args.length != 4) throw new InvalidCommand("Correct usage: mv user <username> <new_env>");
+        if (args.length != 6) throw new InvalidCommand("Correct usage: mv user <username> <new_env> <latitude> <longitude>");
         try {
             User user = (User) this.service.take(new User(args[2]));
             if (user != null) {
-                Environment env = (Environment) this.service.read(new Environment(args[3]));
+                Environment env = (Environment) this.service.read(new Environment(args[3], parseFloat(args[4]), parseFloat(args[5])));
                 if (env != null) {
                     user.environment = env;
                     this.service.send(user);

@@ -43,7 +43,7 @@ public class ListEnvironment implements ICommand {
             if (!listEnv.isEmpty()) {
                 println("+ Salas");
                 for(Environment env : listEnv) {
-                    println("   - " + env.name);
+                    println("   - " + env.name + " (Latitude: " + env.latitude + " Longitude: " + env.longitude + ")");
                 }
             } else {
                 println("Salas não encontradas!");
@@ -61,7 +61,7 @@ public class ListEnvironment implements ICommand {
                 println("+ Sala: " + args[2]);
                 println("+ Usuários");
                 for(User env : listUser) {
-                    println("   - " + env.name);
+                    println("   - " + env.name + " (Latitude: " + env.latitude + " Longitude: " + env.longitude + ")");
                 }
             } else {
                 println("Não foram encontrados usuários nessa sala!" + args[2]);

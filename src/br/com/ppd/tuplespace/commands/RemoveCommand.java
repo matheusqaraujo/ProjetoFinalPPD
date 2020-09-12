@@ -35,7 +35,7 @@ public class RemoveCommand implements ICommand {
     }
 
     private void removeEnv() throws InvalidCommand {
-        if (args.length != 3) throw new InvalidCommand("Correct usage: rm env <environment_name>");
+        if (args.length != 3) throw new InvalidCommand("Correct usage: rm env <nome da sala>");
         try {
             if (this.service.listUsersByEnv(args[2]).isEmpty()) {
                 this.service.take(new Environment(args[2]));

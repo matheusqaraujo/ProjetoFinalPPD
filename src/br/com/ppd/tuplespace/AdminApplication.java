@@ -35,8 +35,8 @@ class AdminApplication {
         println("+              Espaço de Tuplas             +");
         println("+-------------------------------------------+");
         println("Comandos adicionar: ");
-        println("   add env <nome da sala>");
-        println("   add user <nome do usuario> <nome da sala>");
+        println("   add env <nome da sala> <latitude> <longitude>");
+        println("   add user <nome do usuario> <nome da sala> <latitude> <longitude>");
         println("Comandos listar: ");
         println("   ls env");
         println("   ls user <nome da sala>");
@@ -44,7 +44,7 @@ class AdminApplication {
         println("   rm env <nome da sala>");
         println("   rm user <nome do usuario>");
         println("Comandos mover: ");
-        println("   mv user <nome do usuario> <nome da sala>");
+        println("   mv user <nome do usuario> <nome da sala> <latitude> <longitude>");
         println("+-------------------------------------------+");
     }
 
