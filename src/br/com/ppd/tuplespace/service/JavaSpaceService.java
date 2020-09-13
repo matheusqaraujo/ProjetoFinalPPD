@@ -18,8 +18,7 @@ public class JavaSpaceService {
     private static JavaSpaceService INSTANCE = null;
 
     private JavaSpace space;
-    private long lease = 300*1000; // 5 minutos
-    private long lease10 = 600*1000; // 10 minutos
+    private long lease = Lease.FOREVER;
 
     private JavaSpaceService() {
         init();
@@ -91,19 +90,21 @@ public class JavaSpaceService {
         return listEnv;
     }
 
-    public List<User> listUsersByEnv(String env) throws ServiceUnavailable {
+    public List<User> listUsersByEnv(String envName) throws ServiceUnavailable {
         List<User> listEnv = new LinkedList<User>();
 
         User user = null;
         User template = new User();
-        Float x = 1.0F;
-        Float y = 2.0F;
-        template.environment = new Environment(env);
-        do {
-            user = (User) take(template);
-            if (user != null) listEnv.add(user);
-        } while(user != null);
-        write(listEnv);
+        Environment env = (Environment) read(new Environment(envName));
+        if (env != null){
+            template.environment = env;
+            do {
+                user = (User) take(template);
+                if (user != null) listEnv.add(user);
+            } while(user != null);
+            write(listEnv);
+        }
+
         return listEnv;
     }
 
