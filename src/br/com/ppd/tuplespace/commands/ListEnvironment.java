@@ -33,6 +33,9 @@ public class ListEnvironment implements ICommand {
             case USER:
                 listUserInEnv();
                 break;
+            case USERS:
+                listAllUsers();
+                break;
         }
     }
 
@@ -65,6 +68,23 @@ public class ListEnvironment implements ICommand {
                 }
             } else {
                 println("Não foram encontrados usuários nessa sala!" + args[2]);
+            }
+        } catch (ServiceUnavailable serviceUnavailable) {
+            println("Could not execute command. Error: " + serviceUnavailable.getMessage());
+        }
+    }
+
+    private void listAllUsers() throws InvalidCommand {
+        if (args.length != 2) throw new InvalidCommand("Correct usage: list users");
+        try {
+            List<User> listUser = this.service.listAllUsers();
+            if (!listUser.isEmpty()) {
+                println("+ Usuários");
+                for(User user : listUser) {
+                    println("   - " + user.name + " (Ambiente: " + user.environment.name + " Latitude: " + user.latitude + " Longitude: " + user.longitude + ")");
+                }
+            } else {
+                println("Usuários não encontradas!");
             }
         } catch (ServiceUnavailable serviceUnavailable) {
             println("Could not execute command. Error: " + serviceUnavailable.getMessage());

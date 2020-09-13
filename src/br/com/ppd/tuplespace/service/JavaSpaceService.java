@@ -107,6 +107,19 @@ public class JavaSpaceService {
         return listEnv;
     }
 
+    public List<User> listAllUsers() throws ServiceUnavailable {
+        List<User> listUser = new LinkedList<User>();
+
+        User user = null;
+        User template = new User();
+        do {
+            user = (User) take(template);
+            if (user != null) listUser.add(user);
+        } while(user != null);
+        write(listUser);
+        return listUser;
+    }
+
     public List<Message> getMessages(User user) throws ServiceUnavailable {
         List<Message> messages = new LinkedList<Message>();
 

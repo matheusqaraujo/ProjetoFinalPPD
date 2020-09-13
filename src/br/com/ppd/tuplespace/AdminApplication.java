@@ -40,6 +40,7 @@ class AdminApplication {
         println("Comandos listar: ");
         println("   ls env");
         println("   ls user <nome da sala>");
+        println("   ls users");
         println("Comandos remover: ");
         println("   rm env <nome da sala>");
         println("   rm user <nome do usuario>");
