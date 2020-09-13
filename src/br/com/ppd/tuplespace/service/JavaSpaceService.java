@@ -96,6 +96,8 @@ public class JavaSpaceService {
 
         User user = null;
         User template = new User();
+        Float x = 1.0F;
+        Float y = 2.0F;
         template.environment = new Environment(env);
         do {
             user = (User) take(template);
@@ -119,8 +121,8 @@ public class JavaSpaceService {
         return messages;
     }
 
-    public Environment findEnvironment(String arg, Float latitude, Float longitude) throws ServiceUnavailable{
-        return (Environment) read(new Environment(arg, latitude, longitude));
+    public Environment findEnvironment(String arg) throws ServiceUnavailable{
+        return (Environment) read(new Environment(arg));
     }
 
     public User searchUser(User user) throws ServiceUnavailable {

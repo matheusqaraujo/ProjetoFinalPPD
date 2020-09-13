@@ -52,7 +52,7 @@ public class AddCommand implements ICommand {
     private void addUser() throws InvalidCommand {
         if (args.length != 6) throw new InvalidCommand("Correct usage: add user <nome do usuario> <nome da sala> <latitude> <longitude>");
         try {
-            Environment env = this.service.findEnvironment(args[3], parseFloat(args[4]), parseFloat(args[5]));
+            Environment env = this.service.findEnvironment(args[3]);
             if (env == null) throw new IllegalArgumentException(String.format("Sala %s não encontrada.", args[3]));
 
             User user = new User();
