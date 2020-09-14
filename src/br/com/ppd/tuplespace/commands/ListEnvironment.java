@@ -67,7 +67,7 @@ public class ListEnvironment implements ICommand {
                     println("   - " + env.name + " (Latitude: " + env.latitude + " Longitude: " + env.longitude + ")");
                 }
             } else {
-                println("Não foram encontrados usuários na sala %s !" + args[2]);
+                println("Não foram encontrados usuários na sala " + args[2] + " !");
             }
         } catch (ServiceUnavailable serviceUnavailable) {
             println("Could not execute command. Error: " + serviceUnavailable.getMessage());

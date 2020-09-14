@@ -82,7 +82,7 @@ public class AddCommand implements ICommand {
             List<User> lista = new LinkedList<User>();
             for (User item: listUser) {
                 double distance = Math.sqrt(Math.pow(item.latitude - parseFloat(args[3]), 2) + Math.pow(item.longitude - parseFloat(args[4]), 2));
-                println(String.format("Distancia entre o dispositivo %s -> %s = %f.2", args[2], item.name, distance));
+                println(String.format("Distancia entre o dispositivo %s -> %s = %.2fm", args[2], item.name, distance));
                 if (distance <= 10){
                     lista.add(item);
                 }
