@@ -162,69 +162,87 @@ public class ChatView extends VBox {
     private void onAddUser(){
         try {
             StringBuilder sb = new StringBuilder();
+            boolean existe = false;
 
             List<User> listUser = this.service.listAllUsers();
-            List<User> lista = new LinkedList<User>();
             for (User item: listUser) {
-                double distance = Math.sqrt(Math.pow(item.latitude - parseFloat(this.xField.getText()), 2) + Math.pow(item.longitude - parseFloat(this.yField.getText()), 2));
-                println(String.format("Distancia entre o dispositivo %s -> %s = %.2fm", this.usernameField.getText(), item.name, distance));
-                sb.append(String.format("Distancia entre o dispositivo %s -> %s = %.2fm \n", this.usernameField.getText(), item.name, distance));
-                if (distance <= 10){
-                    lista.add(item);
+                if (item.name.equals(this.usernameField.getText())){
+                    existe = true;
+                }
+            }
+            if(existe == true){
+                sb.append(String.format("\nDispositivo %s já está registrado!\n", this.usernameField.getText()));
+            }
+            else{
+                List<User> lista = new LinkedList<User>();
+                for (User item: listUser) {
+                    double distance = Math.sqrt(Math.pow(item.latitude - parseFloat(this.xField.getText()), 2) + Math.pow(item.longitude - parseFloat(this.yField.getText()), 2));
+                    println(String.format("Distancia entre o dispositivo %s -> %s = %.2fm", this.usernameField.getText(), item.name, distance));
+                    sb.append(String.format("Distancia entre o dispositivo %s -> %s = %.2fm \n", this.usernameField.getText(), item.name, distance));
+                    if (distance <= 10){
+                        lista.add(item);
+                    }
+                }
+
+                if(!lista.isEmpty()){ // Se tiver alguem a 10m ou menos:
+                    // Encontra o ambiente do dispositivo mais proximo
+                    Environment env = lista.get(0).environment;
+
+                    // Cria dispositivo com o ambiente encontrado
+                    User user = new User();
+                    user.name = this.usernameField.getText();
+                    user.latitude = parseFloat(this.xField.getText());
+                    user.longitude = parseFloat(this.yField.getText());
+                    if (this.service.searchUser(user) == null) {
+                        user.environment = env;
+                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
+                        println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), env.name));
+                        sb.append(String.format("Usuário %s adicionado a sala %s!\n", this.usernameField.getText(), env.name));
+                    } else {
+                        println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
+                        sb.append(String.format("Usuário %s já está em outra sala!\n", this.usernameField.getText()));
+                    }
+                }
+                else{ // Caso não tenha ninguem:
+                    // Cria ambiente
+                    String envName = "";
+                    Environment envAux = null;
+                    do {
+                        envName = getAlphaNumericString(2);
+                        envAux = this.service.findEnvironment(envName);
+                    } while(envAux != null);
+
+                    Float envLatitude = parseFloat(this.xField.getText());
+                    Float envLongitude = parseFloat(this.yField.getText());
+                    try {
+                        this.service.send(new Environment(envName, envLatitude, envLongitude));
+                        println(String.format("Sala %s adicionada", envName));
+                        sb.append(String.format("\nSala %s adicionada\n", envName));
+                    } catch (ServiceUnavailable serviceUnavailable) {
+                        println("Could not execute command. Error: " + serviceUnavailable.getMessage());
+                        sb.append("\nCould not execute command. Error: \n" + serviceUnavailable.getMessage());
+                    }
+
+                    // Cria dispositivo
+                    Environment env = this.service.findEnvironment(envName);
+                    if (env == null) throw new IllegalArgumentException(String.format("Sala %s não encontrada.", envName));
+
+                    User user = new User();
+                    user.name = this.usernameField.getText();
+                    user.latitude = parseFloat(this.xField.getText());
+                    user.longitude = parseFloat(this.yField.getText());
+                    if (this.service.searchUser(user) == null) {
+                        user.environment = env;
+                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
+                        println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), envName));
+                        sb.append(String.format("\nUsuário %s adicionado a sala %s!\n", this.usernameField.getText(), envName));
+                    } else {
+                        println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
+                        sb.append(String.format("\nUsuário %s já está em outra sala!\n", this.usernameField.getText()));
+                    }
                 }
             }
 
-            if(!lista.isEmpty()){ // Se tiver alguem a 10m ou menos:
-                // Encontra o ambiente do dispositivo mais proximo
-                Environment env = lista.get(0).environment;
-
-                // Cria dispositivo com o ambiente encontrado
-                User user = new User();
-                user.name = this.usernameField.getText();
-                user.latitude = parseFloat(this.xField.getText());
-                user.longitude = parseFloat(this.yField.getText());
-                if (this.service.searchUser(user) == null) {
-                    user.environment = env;
-                    this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
-                    println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), env.name));
-                    sb.append(String.format("Usuário %s adicionado a sala %s!\n", this.usernameField.getText(), env.name));
-                } else {
-                    println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
-                    sb.append(String.format("Usuário %s já está em outra sala!\n", this.usernameField.getText()));
-                }
-            }
-            else{ // Caso não tenha ninguem:
-                // Cria ambiente
-                String envName = getAlphaNumericString(2);
-                Float envLatitude = parseFloat(this.xField.getText());
-                Float envLongitude = parseFloat(this.yField.getText());
-                try {
-                    this.service.send(new Environment(envName, envLatitude, envLongitude));
-                    println(String.format("Sala %s adicionada", envName));
-                    sb.append(String.format("\nSala %s adicionada\n", envName));
-                } catch (ServiceUnavailable serviceUnavailable) {
-                    println("Could not execute command. Error: " + serviceUnavailable.getMessage());
-                    sb.append("\nCould not execute command. Error: \n" + serviceUnavailable.getMessage());
-                }
-
-                // Cria dispositivo
-                Environment env = this.service.findEnvironment(envName);
-                if (env == null) throw new IllegalArgumentException(String.format("Sala %s não encontrada.", envName));
-
-                User user = new User();
-                user.name = this.usernameField.getText();
-                user.latitude = parseFloat(this.xField.getText());
-                user.longitude = parseFloat(this.yField.getText());
-                if (this.service.searchUser(user) == null) {
-                    user.environment = env;
-                    this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
-                    println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), envName));
-                    sb.append(String.format("\nUsuário %s adicionado a sala %s!\n", this.usernameField.getText(), envName));
-                } else {
-                    println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
-                    sb.append(String.format("\nUsuário %s já está em outra sala!\n", this.usernameField.getText()));
-                }
-            }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initStyle(StageStyle.UTILITY);
             alert.setTitle("Adicionando: " + this.usernameField.getText());
