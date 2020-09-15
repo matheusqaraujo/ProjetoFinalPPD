@@ -41,7 +41,7 @@
     <property name="project.structure.side.proportion" value="0.1985294" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Client1">
+  <component name="RunManager" selected="Application.Client2">
     <configuration name="Client1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
       <module name="TupleSpace-master" />
@@ -96,7 +96,7 @@
       <workItem from="1599969612442" duration="613000" />
       <workItem from="1600030972684" duration="8247000" />
       <workItem from="1600125393360" duration="11575000" />
-      <workItem from="1600199416255" duration="732000" />
+      <workItem from="1600199416255" duration="2335000" />
     </task>
     <servers />
   </component>
@@ -135,22 +135,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598994699379" />
-    <state width="1860" height="340" key="GridCell.Tab.0.bottom" timestamp="1600141007974">
+    <state width="1860" height="340" key="GridCell.Tab.0.bottom" timestamp="1600201756142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600141007974" />
-    <state width="1860" height="340" key="GridCell.Tab.0.center" timestamp="1600141007974">
+    <state width="1860" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600201756142" />
+    <state width="1860" height="340" key="GridCell.Tab.0.center" timestamp="1600201756141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600141007974" />
-    <state width="1860" height="340" key="GridCell.Tab.0.left" timestamp="1600141007974">
+    <state width="1860" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600201756141" />
+    <state width="1860" height="340" key="GridCell.Tab.0.left" timestamp="1600201756141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600141007974" />
-    <state width="1860" height="340" key="GridCell.Tab.0.right" timestamp="1600141007974">
+    <state width="1860" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600201756141" />
+    <state width="1860" height="340" key="GridCell.Tab.0.right" timestamp="1600201756142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600141007974" />
+    <state width="1860" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600201756142" />
     <state width="1860" height="343" key="GridCell.Tab.1.bottom" timestamp="1599969523142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
