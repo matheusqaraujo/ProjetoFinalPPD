@@ -185,7 +185,7 @@ public class ChatView extends VBox {
                 }
 
                 if(!lista.isEmpty()){ // Se tiver alguem a 10m ou menos:
-                    // Encontra o ambiente do dispositivo mais proximo
+                    // Encontra o ambiente do primeiro dispositivo
                     Environment env = lista.get(0).environment;
 
                     // Cria dispositivo com o ambiente encontrado
@@ -196,11 +196,11 @@ public class ChatView extends VBox {
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
                         this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
-                        println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), env.name));
-                        sb.append(String.format("Usuário %s adicionado a sala %s!\n", this.usernameField.getText(), env.name));
+                        println(String.format("Dispositivo %s adicionado ao ambiente %s!", this.usernameField.getText(), env.name));
+                        sb.append(String.format("Dispositivo %s adicionado ao ambiente %s!\n", this.usernameField.getText(), env.name));
                     } else {
-                        println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
-                        sb.append(String.format("Usuário %s já está em outra sala!\n", this.usernameField.getText()));
+                        println(String.format("Dispositivo %s já está em outro ambiente!", this.usernameField.getText()));
+                        sb.append(String.format("Dispositivo %s já está em outro ambiente!\n", this.usernameField.getText()));
                     }
                 }
                 else{ // Caso não tenha ninguem:
@@ -216,8 +216,8 @@ public class ChatView extends VBox {
                     Float envLongitude = parseFloat(this.yField.getText());
                     try {
                         this.service.send(new Environment(envName, envLatitude, envLongitude));
-                        println(String.format("Sala %s adicionada", envName));
-                        sb.append(String.format("\nSala %s adicionada\n", envName));
+                        println(String.format("Ambiente %s adicionado", envName));
+                        sb.append(String.format("\nAmbiente %s adicionado\n", envName));
                     } catch (ServiceUnavailable serviceUnavailable) {
                         println("Could not execute command. Error: " + serviceUnavailable.getMessage());
                         sb.append("\nCould not execute command. Error: \n" + serviceUnavailable.getMessage());
@@ -225,7 +225,7 @@ public class ChatView extends VBox {
 
                     // Cria dispositivo
                     Environment env = this.service.findEnvironment(envName);
-                    if (env == null) throw new IllegalArgumentException(String.format("Sala %s não encontrada.", envName));
+                    if (env == null) throw new IllegalArgumentException(String.format("Ambiente %s não encontrado.", envName));
 
                     User user = new User();
                     user.name = this.usernameField.getText();
@@ -234,11 +234,11 @@ public class ChatView extends VBox {
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
                         this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
-                        println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), envName));
-                        sb.append(String.format("\nUsuário %s adicionado a sala %s!\n", this.usernameField.getText(), envName));
+                        println(String.format("Usuário %s adicionado ao ambiente %s!", this.usernameField.getText(), envName));
+                        sb.append(String.format("\nUsuário %s adicionado ao ambiente %s!\n", this.usernameField.getText(), envName));
                     } else {
-                        println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
-                        sb.append(String.format("\nUsuário %s já está em outra sala!\n", this.usernameField.getText()));
+                        println(String.format("Usuário %s já está em outro ambiente!", this.usernameField.getText()));
+                        sb.append(String.format("\nUsuário %s já está em outro ambiente!\n", this.usernameField.getText()));
                     }
                 }
             }
@@ -289,22 +289,27 @@ public class ChatView extends VBox {
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
                         this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
-                        println(String.format("Usuário %s adicionado a sala %s!", this.usernameField.getText(), env.name));
-                        sb.append(String.format("\nUsuário %s adicionado a sala %s!\n", this.usernameField.getText(), env.name));
+                        println(String.format("Dispositivo %s adicionado ao ambiente %s!", this.usernameField.getText(), env.name));
+                        sb.append(String.format("\nDispositivo %s adicionado ao ambiente %s!\n", this.usernameField.getText(), env.name));
                     } else {
-                        println(String.format("Usuário %s já está em outra sala!", this.usernameField.getText()));
-                        sb.append(String.format("\nUsuário %s já está em outra sala!\n", this.usernameField.getText()));
+                        println(String.format("Dispositivo %s já está em outro ambiente!", this.usernameField.getText()));
+                        sb.append(String.format("\nDispositivo %s já está em outro ambiente!\n", this.usernameField.getText()));
                     }
                 }
                 else{ // Caso não tenha ninguem:
                     // Cria ambiente
-                    String envName = getAlphaNumericString(2);
+                    String envName = "";
+                    Environment envAux = null;
+                    do {
+                        envName = getAlphaNumericString(2);
+                        envAux = this.service.findEnvironment(envName);
+                    } while(envAux != null);
                     Float envLatitude = parseFloat(this.xField.getText());
                     Float envLongitude = parseFloat(this.yField.getText());
                     try {
                         this.service.send(new Environment(envName, envLatitude, envLongitude));
-                        println(String.format("Sala %s adicionada", envName));
-                        sb.append(String.format("\nSala %s adicionada\n", envName));
+                        println(String.format("Ambiente %s adicionado", envName));
+                        sb.append(String.format("\nAmbiente %s adicionado\n", envName));
                     } catch (ServiceUnavailable serviceUnavailable) {
                         println("Could not execute command. Error: " + serviceUnavailable.getMessage());
                         sb.append("\nCould not execute command. Error: \n" + serviceUnavailable.getMessage());
