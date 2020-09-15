@@ -9,9 +9,9 @@ public class ClientApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("PPD - Espaço de Tuplas");
+        primaryStage.setTitle("PPD - Trabalho Final");
         ChatView view = new ChatView();
-        Scene scene = new Scene(view, 800, 600);
+        Scene scene = new Scene(view, 450, 250);
         primaryStage.setScene(scene);
         primaryStage.setOnCloseRequest((v) -> view.closeServices());
         primaryStage.show();

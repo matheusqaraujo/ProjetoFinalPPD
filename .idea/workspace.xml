@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="07b79330-8087-43fd-8bab-6e3475ea9cf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/commands/AddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/commands/AddCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/ListEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/ListEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/MoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
     <property name="project.structure.side.proportion" value="0.1985294" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Client1">
     <configuration name="Client1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
       <module name="TupleSpace-master" />
@@ -97,7 +95,8 @@
       <workItem from="1599006250863" duration="1963000" />
       <workItem from="1599941546848" duration="24085000" />
       <workItem from="1599969612442" duration="613000" />
-      <workItem from="1600030972684" duration="8085000" />
+      <workItem from="1600030972684" duration="8247000" />
+      <workItem from="1600125393360" duration="11323000" />
     </task>
     <servers />
   </component>
@@ -136,22 +135,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598994699379" />
-    <state width="1860" height="340" key="GridCell.Tab.0.bottom" timestamp="1600044665673">
+    <state width="1860" height="340" key="GridCell.Tab.0.bottom" timestamp="1600140761616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600044665673" />
-    <state width="1860" height="340" key="GridCell.Tab.0.center" timestamp="1600044665673">
+    <state width="1860" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600140761616" />
+    <state width="1860" height="340" key="GridCell.Tab.0.center" timestamp="1600140761616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600044665673" />
-    <state width="1860" height="340" key="GridCell.Tab.0.left" timestamp="1600044665673">
+    <state width="1860" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600140761616" />
+    <state width="1860" height="340" key="GridCell.Tab.0.left" timestamp="1600140761616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600044665673" />
-    <state width="1860" height="340" key="GridCell.Tab.0.right" timestamp="1600044665673">
+    <state width="1860" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600140761616" />
+    <state width="1860" height="340" key="GridCell.Tab.0.right" timestamp="1600140761616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600044665673" />
+    <state width="1860" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600140761616" />
     <state width="1860" height="343" key="GridCell.Tab.1.bottom" timestamp="1599969523142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
