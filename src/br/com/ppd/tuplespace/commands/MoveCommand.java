@@ -90,7 +90,7 @@ public class MoveCommand implements ICommand {
                     user.longitude = parseFloat(args[4]);
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
-                        this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
+                        //this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
                         println(String.format("Usuário %s adicionado a sala %s!", args[2], env.name));
                     } else {
                         println(String.format("Usuário %s já está em outra sala!", args[2]));
@@ -118,7 +118,7 @@ public class MoveCommand implements ICommand {
                     user.longitude = parseFloat(args[4]);
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
-                        this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
+                        //this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
                         println(String.format("Usuário %s adicionado a sala %s!", args[2], envName));
                     } else {
                         println(String.format("Usuário %s já está em outra sala!", args[2]));

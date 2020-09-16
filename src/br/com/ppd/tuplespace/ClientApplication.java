@@ -11,7 +11,7 @@ public class ClientApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("PPD - Trabalho Final");
         ChatView view = new ChatView();
-        Scene scene = new Scene(view, 450, 250);
+        Scene scene = new Scene(view, 550, 200);
         primaryStage.setScene(scene);
         primaryStage.setOnCloseRequest((v) -> view.closeServices());
         primaryStage.show();

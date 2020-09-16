@@ -65,7 +65,7 @@ public class AddCommand implements ICommand {
             user.longitude = parseFloat(args[5]);
             if (this.service.searchUser(user) == null) {
                 user.environment = env;
-                this.service.send(new User(args[2], env, parseFloat(args[4]), parseFloat(args[5])));
+                //this.service.send(new User(args[2], env, parseFloat(args[4]), parseFloat(args[5])));
                 println(String.format("Usuário %s adicionado a sala %s!", args[2], args[3]));
             } else {
                 println(String.format("Usuário %s já está em outra sala!", args[2]));
@@ -74,7 +74,7 @@ public class AddCommand implements ICommand {
             println("Could not execute command. Error: " + serviceUnavailable.getMessage());
         }
     }
-    
+
     private void addUser10m() throws InvalidCommand {
         if (args.length != 5) throw new InvalidCommand("Correct usage: add user <nome do usuario> <latitude> <longitude>");
         try {
@@ -99,7 +99,7 @@ public class AddCommand implements ICommand {
                 user.longitude = parseFloat(args[4]);
                 if (this.service.searchUser(user) == null) {
                     user.environment = env;
-                    this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
+                    //this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
                     println(String.format("Usuário %s adicionado a sala %s!", args[2], env.name));
                 } else {
                     println(String.format("Usuário %s já está em outra sala!", args[2]));
@@ -127,7 +127,7 @@ public class AddCommand implements ICommand {
                 user.longitude = parseFloat(args[4]);
                 if (this.service.searchUser(user) == null) {
                     user.environment = env;
-                    this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
+                    //this.service.send(new User(args[2], env, parseFloat(args[3]), parseFloat(args[4])));
                     println(String.format("Usuário %s adicionado a sala %s!", args[2], envName));
                 } else {
                     println(String.format("Usuário %s já está em outra sala!", args[2]));

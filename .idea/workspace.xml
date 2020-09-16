@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07b79330-8087-43fd-8bab-6e3475ea9cf1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/ClientApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/ClientApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/commands/AddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/commands/AddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/commands/MoveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/commands/MoveCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/view/ChatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TupleSpace-master/br/com/ppd/tuplespace/view/ChatView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/commands/MoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +51,7 @@
     <property name="project.structure.side.proportion" value="0.1985294" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Client1">
-    <configuration name="Client1" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
-      <module name="TupleSpace-master" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Client2">
     <configuration name="Client2" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.ClientMain" />
       <module name="TupleSpace-master" />
@@ -70,9 +73,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="br.com.ppd.tuplespace.view.ServidorSocket" />
+      <module name="TupleSpace-master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Client1" />
+      <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client2" />
       <item itemvalue="Application.Client3" />
     </list>
@@ -97,6 +107,9 @@
       <workItem from="1600030972684" duration="8247000" />
       <workItem from="1600125393360" duration="11575000" />
       <workItem from="1600199416255" duration="7163000" />
+      <workItem from="1600212490326" duration="10287000" />
+      <workItem from="1600224507214" duration="231000" />
+      <workItem from="1600224858745" duration="481000" />
     </task>
     <servers />
   </component>
@@ -115,18 +128,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600042432700" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598996318903">
+    <state x="790" y="374" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1600220995418">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598996318903" />
-    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1598994370862">
+    <state x="790" y="374" key="#com.intellij.debugger.actions.ViewTextAction/0.0.1920.1040@0.0.1920.1040" timestamp="1600220995418" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600224909724">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598994370862" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600224909724" />
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600219848124">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600219848124" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598995743751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598995743751" />
+    <state x="848" y="272" key="#xdebugger.XInspectDialog" timestamp="1600220996163">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="848" y="272" key="#xdebugger.XInspectDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600220996163" />
     <state x="1085" y="208" key="#xdebugger.evaluate" timestamp="1599960370788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -135,38 +156,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598994699379" />
-    <state width="1860" height="340" key="GridCell.Tab.0.bottom" timestamp="1600206908898">
+    <state width="1860" height="340" key="GridCell.Tab.0.bottom" timestamp="1600225526277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600206908898" />
-    <state width="1860" height="340" key="GridCell.Tab.0.center" timestamp="1600206908898">
+    <state width="1860" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600225526277" />
+    <state width="1860" height="340" key="GridCell.Tab.0.center" timestamp="1600225526277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600206908898" />
-    <state width="1860" height="340" key="GridCell.Tab.0.left" timestamp="1600206908898">
+    <state width="1860" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600225526277" />
+    <state width="1860" height="340" key="GridCell.Tab.0.left" timestamp="1600225526277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600206908898" />
-    <state width="1860" height="340" key="GridCell.Tab.0.right" timestamp="1600206908898">
+    <state width="1860" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600225526277" />
+    <state width="1860" height="340" key="GridCell.Tab.0.right" timestamp="1600225526277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600206908898" />
-    <state width="1860" height="343" key="GridCell.Tab.1.bottom" timestamp="1600203121454">
+    <state width="1860" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600225526277" />
+    <state width="1860" height="343" key="GridCell.Tab.1.bottom" timestamp="1600225500592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600203121454" />
-    <state width="1860" height="343" key="GridCell.Tab.1.center" timestamp="1600203121453">
+    <state width="1860" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600225500592" />
+    <state width="1860" height="343" key="GridCell.Tab.1.center" timestamp="1600225500592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="343" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600203121453" />
-    <state width="1860" height="343" key="GridCell.Tab.1.left" timestamp="1600203121453">
+    <state width="1860" height="343" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600225500592" />
+    <state width="1860" height="343" key="GridCell.Tab.1.left" timestamp="1600225500591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="343" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600203121453" />
-    <state width="1860" height="343" key="GridCell.Tab.1.right" timestamp="1600203121454">
+    <state width="1860" height="343" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600225500591" />
+    <state width="1860" height="343" key="GridCell.Tab.1.right" timestamp="1600225500592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="343" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600203121454" />
+    <state width="1860" height="343" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600225500592" />
     <state x="662" y="65" key="SettingsEditor" timestamp="1598996439136">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,10 +210,160 @@
     <state x="616" y="177" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598996447541" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>337</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>339</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>340</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>342</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>343</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>344</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>345</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>347</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>350</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>351</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>352</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>353</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>354</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>356</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>358</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ChatView.java</url>
+          <line>357</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/br/com/ppd/tuplespace/view/ServidorSocket.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this.usernameField" language="JAVA" />
         <watch expression="item.name" language="JAVA" />
+        <watch expression="this" />
       </configuration>
     </watches-manager>
   </component>

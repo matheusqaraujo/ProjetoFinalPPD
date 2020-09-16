@@ -14,6 +14,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.StageStyle;
 
+import java.io.*;
+import java.net.Socket;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +27,9 @@ public class ChatView extends VBox {
     private TextField xField;
     private TextField yField;
     private TextField envField;
+    private TextField ipField;
+    private TextField portField;
+    private TextField pathField;
 
     private Button addButton;
     private Button userListAll;
@@ -32,6 +37,7 @@ public class ChatView extends VBox {
     private Button envListSelected;
 
     private Button movUser;
+    private Button uploadButton;
 
     private Button loginButton;
     private Button envCreateButton;
@@ -50,49 +56,7 @@ public class ChatView extends VBox {
         this.service = JavaSpaceService.getInstance();
         this.setSpacing(5);
         initElements();
-        this.getChildren().addAll(usernameField, xField, yField, addButton, movUser ,envField,envListSelected,envListAll,userListAll);
-        //this.getChildren().addAll(envLabel, usernameField, loginButton, envField, envCreateButton, envMoveButton, envListAll, envListSelected, chatArea, messageField);
-    }
-
-    private void onLogin() {
-        try {
-            loggedUser = this.service.searchUser(new User(this.usernameField.getText()));
-            if (loggedUser != null) {
-                startChatService();
-                envLabel.setText("Você está na sala: " + loggedUser.environment.name);
-            }
-        } catch (ServiceUnavailable serviceUnavailable) {
-            serviceUnavailable.printStackTrace();
-        }
-    }
-
-    private void onCreateEnv(){
-        try {
-            this.service.send(new Environment(this.usernameField.getText()));
-            println(String.format("Sala %s adicionada", this.usernameField.getText()));
-        } catch (ServiceUnavailable serviceUnavailable) {
-            println("Could not execute command. Error: " + serviceUnavailable.getMessage());
-        }
-    }
-
-    private void onMoveEnv(){
-        try {
-            User user = (User) this.service.take(new User(this.usernameField.getText()));
-            if (user != null) {
-                Environment env = (Environment) this.service.read(new Environment(this.envField.getText()));
-                if (env != null) {
-                    user.environment = env;
-                    this.service.send(user);
-                    println(String.format("Usuário %s movido a sala %s", this.usernameField.getText(), this.envField.getText()));
-                } else {
-                    println(String.format("Sala %s não localizada", this.envField.getText()));
-                }
-            } else {
-                println(String.format("Usuário %s não encontrado", this.usernameField.getText()));
-            }
-        } catch (ServiceUnavailable serviceUnavailable) {
-            println("Could not execute command. Error: " + serviceUnavailable.getMessage());
-        }
+        this.getChildren().addAll(usernameField, xField, yField, ipField, portField, pathField, addButton, movUser, uploadButton ,envField,envListSelected,envListAll,userListAll);
     }
 
     private void onListAllEnv(){
@@ -145,7 +109,7 @@ public class ChatView extends VBox {
             StringBuilder sb = new StringBuilder();
             sb.append("Dispositivos:\n");
             for(User user:userList){
-                sb.append("   - " + user.name + " ( Ambiente: " + user.environment.name + " | Latitude: " + user.latitude + " | Longitude: " + user.longitude + " )\n");
+                sb.append("   - " + user.name + " ( Ambiente: " + user.environment.name + " | Latitude: " + user.latitude + " | Longitude: " + user.longitude + " | IP: " + user.IP + " | Porta: " + user.Porta + " | Path: " + user.PATH + " )\n");
             }
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -195,7 +159,11 @@ public class ChatView extends VBox {
                     user.longitude = parseFloat(this.yField.getText());
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
-                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
+                        Integer porta = null;
+                        if(!this.portField.getText().isEmpty()){
+                            porta = Integer.parseInt(this.portField.getText());
+                        }
+                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText()), this.ipField.getText(), porta,this.pathField.getText()));
                         println(String.format("Dispositivo %s adicionado ao ambiente %s!", this.usernameField.getText(), env.name));
                         sb.append(String.format("Dispositivo %s adicionado ao ambiente %s!\n", this.usernameField.getText(), env.name));
                     } else {
@@ -233,7 +201,11 @@ public class ChatView extends VBox {
                     user.longitude = parseFloat(this.yField.getText());
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
-                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
+                        Integer porta = null;
+                        if(!this.portField.getText().isEmpty()){
+                            porta = Integer.parseInt(this.portField.getText());
+                        }
+                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText()), this.ipField.getText(), porta,this.pathField.getText()));
                         println(String.format("Usuário %s adicionado ao ambiente %s!", this.usernameField.getText(), envName));
                         sb.append(String.format("\nUsuário %s adicionado ao ambiente %s!\n", this.usernameField.getText(), envName));
                     } else {
@@ -288,7 +260,11 @@ public class ChatView extends VBox {
                     user.longitude = parseFloat(this.yField.getText());
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
-                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
+                        Integer porta = null;
+                        if(!this.portField.getText().isEmpty()){
+                            porta = Integer.parseInt(this.portField.getText());
+                        }
+                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText()), this.ipField.getText(), porta,this.pathField.getText()));
                         println(String.format("Dispositivo %s adicionado ao ambiente %s!", this.usernameField.getText(), env.name));
                         sb.append(String.format("\nDispositivo %s adicionado ao ambiente %s!\n", this.usernameField.getText(), env.name));
                     } else {
@@ -325,7 +301,11 @@ public class ChatView extends VBox {
                     user.longitude = parseFloat(this.yField.getText());
                     if (this.service.searchUser(user) == null) {
                         user.environment = env;
-                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText())));
+                        Integer porta = null;
+                        if(!this.portField.getText().isEmpty()){
+                            porta = Integer.parseInt(this.portField.getText());
+                        }
+                        this.service.send(new User(this.usernameField.getText(), env, parseFloat(this.xField.getText()), parseFloat(this.yField.getText()), this.ipField.getText(), porta,this.pathField.getText()));
                         println(String.format("Dispositivo %s adicionado ao ambiente %s!", this.usernameField.getText(), envName));
                         sb.append(String.format("\nDispositivo %s adicionado ao ambiente %s!\n", this.usernameField.getText(), envName));
                     } else {
@@ -349,6 +329,39 @@ public class ChatView extends VBox {
         } catch (ServiceUnavailable serviceUnavailable) {
             println("Could not execute command. Error: " + serviceUnavailable.getMessage());
         }
+    }
+
+    private void onUpload() throws IOException {
+        // Abre uma conexão socket com o endereço e a porta especificados
+        String ip = this.ipField.getText();
+        Integer port = Integer.parseInt(this.portField.getText());
+        Socket socket = new Socket(ip, port);
+
+        File arquivoSeraTransferido = new File(this.pathField.getText());
+        byte[] arrayDeBytesDoArquivo = new byte[(int) arquivoSeraTransferido.length()];
+
+        FileInputStream fis = new FileInputStream(arquivoSeraTransferido);
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        DataInputStream dis = new DataInputStream(bis);
+        dis.readFully(arrayDeBytesDoArquivo, 0, arrayDeBytesDoArquivo.length);
+
+        OutputStream os = socket.getOutputStream();
+
+        // Enviando o NOME e o TAMANHO do arquivo para o server
+        DataOutputStream dos = new DataOutputStream(os);
+        dos.writeUTF(arquivoSeraTransferido.getName());
+        dos.writeLong(arrayDeBytesDoArquivo.length);
+        dos.write(arrayDeBytesDoArquivo, 0, arrayDeBytesDoArquivo.length);
+        dos.flush();
+
+        // Enviando o ARQUIVO para o server
+        os.write(arrayDeBytesDoArquivo, 0, arrayDeBytesDoArquivo.length);
+        os.flush();
+
+        // Fecha as conexões com o socket
+        os.close();
+        dos.close();
+        socket.close();
     }
 
     static String getAlphaNumericString(int n)
@@ -378,11 +391,6 @@ public class ChatView extends VBox {
         return sb.toString();
     }
 
-    private void startChatService() {
-        this.chatService = new ChatService(this.loggedUser, this.chatTextBinding);
-        new Thread(this.chatService).start();
-    }
-
     private void initElements() {
         usernameField = new TextField();
         usernameField.setPromptText("Dispositivo");
@@ -391,7 +399,6 @@ public class ChatView extends VBox {
         usernameField.setTranslateX(0);
         usernameField.setTranslateY(20);
         usernameField.setMaxWidth(100);
-        //usernameField.setPrefHeight(0);
 
         xField = new TextField();
         xField.setPromptText("Latitude");
@@ -400,7 +407,6 @@ public class ChatView extends VBox {
         xField.setTranslateX(110);
         xField.setTranslateY(-10);
         xField.setMaxWidth(70);
-        //xField.setPrefHeight(0);
 
         yField = new TextField();
         yField.setPromptText("Longitude");
@@ -410,26 +416,63 @@ public class ChatView extends VBox {
         yField.setTranslateY(-40);
         yField.setMaxWidth(70);
 
+        ipField = new TextField();
+        ipField.setPromptText("IP");
+        ipField.setLayoutX(0);
+        ipField.setLayoutY(0);
+        ipField.setTranslateX(270);
+        ipField.setTranslateY(-70);
+        ipField.setMaxWidth(70);
+
+        portField = new TextField();
+        portField.setPromptText("Porta");
+        portField.setLayoutX(0);
+        portField.setLayoutY(0);
+        portField.setTranslateX(350);
+        portField.setTranslateY(-100);
+        portField.setMaxWidth(70);
+
+        pathField = new TextField();
+        pathField.setPromptText("Path arquivo");
+        pathField.setLayoutX(0);
+        pathField.setLayoutY(0);
+        pathField.setTranslateX(430);
+        pathField.setTranslateY(-130);
+        pathField.setMaxWidth(70);
+
         addButton = new Button("Adicionar");
         addButton.setOnMouseClicked(x -> onAddUser());
         addButton.setLayoutX(0);
         addButton.setLayoutY(0);
         addButton.setTranslateX(0);
-        addButton.setTranslateY(-30);
+        addButton.setTranslateY(-120);
 
         movUser = new Button("Mover");
         movUser.setOnMouseClicked(x -> onMoveUser());
         movUser.setLayoutX(0);
         movUser.setLayoutY(0);
         movUser.setTranslateX(80);
-        movUser.setTranslateY(-60);
+        movUser.setTranslateY(-150);
+
+        uploadButton = new Button("Enviar arquivo");
+        uploadButton.setOnMouseClicked(x -> {
+            try {
+                onUpload();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        uploadButton.setLayoutX(0);
+        uploadButton.setLayoutY(0);
+        uploadButton.setTranslateX(140);
+        uploadButton.setTranslateY(-180);
 
         envField = new TextField();
         envField.setPromptText("Ambiente");
         envField.setLayoutX(0);
         envField.setLayoutY(0);
         envField.setTranslateX(0);
-        envField.setTranslateY(-20);
+        envField.setTranslateY(-170);
         envField.setMaxWidth(70);
 
         envListSelected = new Button("Listar dispositivos do ambiente");
@@ -437,72 +480,17 @@ public class ChatView extends VBox {
         envListSelected.setLayoutX(0);
         envListSelected.setLayoutY(0);
         envListSelected.setTranslateX(0);
-        envListSelected.setTranslateY(-10);
+        envListSelected.setTranslateY(-160);
 
         envListAll = new Button("Listar Ambientes");
         envListAll.setOnMouseClicked(x -> onListAllEnv());
         envListAll.setTranslateX(200);
-        envListAll.setTranslateY(-40);
+        envListAll.setTranslateY(-190);
 
         userListAll = new Button("Listar Dispositivos");
         userListAll.setOnMouseClicked(x -> onListAllUsers());
         userListAll.setTranslateX(320);
-        userListAll.setTranslateY(-70);
-        /*
-        envLabel = new Label("Digite seu nome:");
-
-        usernameField = new TextField();
-        usernameField.setPrefWidth(345);
-        usernameField.setPromptText("Nome de usuário");
-
-        envField = new TextField();
-        envField.setPrefWidth(345);
-        envField.setPromptText("Nome da sala");
-
-        loginButton = new Button("Login");
-        loginButton.setOnMouseClicked(v -> onLogin());
-
-        envCreateButton = new Button("Criar sala");
-        envCreateButton.setOnMouseClicked(x -> onCreateEnv());
-
-        envMoveButton = new Button("Mudar de sala");
-        envMoveButton.setOnMouseClicked(z -> onMoveEnv());
-
-        envListAll = new Button("Listar todas as salas");
-        envListAll.setOnMouseClicked(z -> onListAllEnv());
-        envListAll.setTranslateX(100);
-        //envListAll.setTranslateY(100);
-
-        envListSelected = new Button("Listar sala selecionada");
-        envListSelected.setOnMouseClicked(z -> onListSelectedEnv());
-
-        chatTextBinding = new ObservableStringBufferBinding();
-        chatArea = new TextArea();
-        chatArea.setPrefHeight(400);
-        chatArea.textProperty().bind(this.chatTextBinding);
-
-        messageField = new TextField();
-        messageField.setPrefHeight(30);
-        messageField.setPromptText("Escreva sua msg");
-        messageField.setOnKeyTyped(v -> keyTyped(v.getCharacter()));
-
-         */
-    }
-
-    private void keyTyped(String code) {
-        if (code.equals("\r")) {
-            String message = this.messageField.getText();
-            Message msg = new Message();
-            msg.content = message;
-            msg.sender = loggedUser.name;
-            msg.env = loggedUser.environment.name;
-            try {
-                this.service.send(msg);
-                this.messageField.clear();
-            } catch (ServiceUnavailable serviceUnavailable) {
-                serviceUnavailable.printStackTrace();
-            }
-        }
+        userListAll.setTranslateY(-220);
     }
 
     public void closeServices() {
